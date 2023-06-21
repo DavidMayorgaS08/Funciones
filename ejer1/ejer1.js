@@ -45,33 +45,58 @@ const circuloA = (radio) => {
 while(true){
     const figuras = prompt("Ingrese la figura que desea calcular: \n 1. Triángulo \n 2. Rectángulo \n 3. Cuadrado \n 4. Círculo \n 5. Salir");
 
-    if(figuras == 5){
-        break;
-    }else if(figuras == 1){
-        alert("Para hallar el Perimetro");
-        const lado1 = parseFloat(prompt("Ingrese el lado 1: "));
-        const lado2 = parseFloat(prompt("Ingrese el lado 2: "));
-        const lado3 = parseFloat(prompt("Ingrese el lado 3: "));
-        alert("Para hallar el Area");
-        const base = parseFloat(prompt("Ingrese la base: "));
-        const altura = parseFloat(prompt("Ingrese la altura: "));
-        console.log(`El perímetro del triángulo es: ${trianguloP(lado1, lado2, lado3)}`);
-        console.log(`El área del triángulo es: ${trianguloA(base, altura)}`);
-    }else if(figuras == 2){
-        alert("Para hallar el Perimetro y el Area");
-        const base = parseFloat(prompt("Ingrese la base: "));
-        const altura = parseFloat(prompt("Ingrese la altura: "));
-        console.log(`El perímetro del rectángulo es: ${rectanguloP(base, altura)}`);
-        console.log(`El área del rectángulo es: ${rectanguloA(base, altura)}`);
-    }else if(figuras == 3){
-        alert("Para hallar el Perimetro y el Area");
-        const lado = parseFloat(prompt("Ingrese el lado: "));
-        console.log(`El perímetro del cuadrado es: ${cuadradoP(lado)}`);
-        console.log(`El área del cuadrado es: ${cuadradoA(lado)}`);
-    }else if(figuras == 4){
-        alert("Para hallar el Perimetro y el Area");
-        const radio = parseFloat(prompt("Ingrese el radio: "));
-        console.log(`El perímetro del círculo es: ${circuloP(radio)}`);
-        console.log(`El área del círculo es: ${circuloA(radio)}`);
+    if(figuras == 1){
+        const triangulo = prompt("Ingrese la operación que desea realizar: \n 1. Perímetro \n 2. Área");
+        if(triangulo == 1){
+            const lado1 = parseInt(prompt("Ingrese el lado 1: "));
+            const lado2 = parseInt(prompt("Ingrese el lado 2: "));
+            const lado3 = parseInt(prompt("Ingrese el lado 3: "));
+            console.log(`El perímetro del triángulo es: ${trianguloP(lado1, lado2, lado3)}`);
+        }else{
+            const base = parseInt(prompt("Ingrese la base: "));
+            const altura = parseInt(prompt("Ingrese la altura: "));
+            console.log(`El área del triángulo es: ${trianguloA(base, altura)}`);
+        }
     }
+    else if(figuras == 2){
+        const rectángulo = prompt("Ingrese la operación que desea realizar: \n 1. Perímetro \n 2. Área");
+        if(rectángulo == 1){
+            const base = parseInt(prompt("Ingrese la base: "));
+            const altura = parseInt(prompt("Ingrese la altura: "));
+            console.log(`El perimetro del rectangulo es: ${trianguloA(base, altura)}`);
+        }
+        else{
+            const base = parseInt(prompt("Ingrese la base: "));
+            const altura = parseInt(prompt("Ingrese la altura: "));
+            console.log(`El área del rectangulo es: ${trianguloA(base, altura)}`);
+        }
+    }
+    else if(figuras == 3){
+        const cuadrado = prompt("Ingrese la operación que desea realizar: \n 1. Perímetro \n 2. Área");
+        if(cuadrado == 1){
+            const lado = parseInt(prompt("Ingrese el lado: "));
+            console.log(`El perímetro del cuadrado es: ${cuadradoP(lado)}`);
+        }
+        else{
+            const lado = parseInt(prompt("Ingrese el lado: "));
+            console.log(`El área del cuadrado es: ${cuadradoA(lado)}`);
+        }
+    }
+    else if(figuras == 4){
+        const circulo = prompt("Ingrese la operación que desea realizar: \n 1. Perímetro \n 2. Área");
+        if(circulo == 1){
+            const radio = parseInt(prompt("Ingrese el radio: "));
+            console.log(`El perímetro del círculo es: ${circuloP(radio)}`);
+        }
+        else{
+            const radio = parseInt(prompt("Ingrese el radio: "));
+            console.log(`El área del círculo es: ${circuloA(radio)}`);
+        }
+    }
+    else if(figuras == 5){
+        break;
+    }
+    else{
+        console.log("Ingrese una opción válida");
+    }   
 }
